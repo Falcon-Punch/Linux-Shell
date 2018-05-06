@@ -1,10 +1,10 @@
 /*************************************************************************
  File name:  CS460_Shell.h
- Author:		 Joseph Schell
- Date:			 03/21/2018
- Class:      CS460 - Operating Systems
- Assignment: Create a UNIX Shell (Milestone 3)
- Purpose:		 Header file for the UNIX Shell Module
+ Author:     Joseph Schell
+ Date:	     03/21/2018
+ Class:      Operating Systems
+ Assignment: Create a UNIX Shell
+ Purpose:    Header file for the UNIX Shell Module
  **************************************************************************/
 #include <stdio.h>
 #include <stdlib.h>
@@ -16,7 +16,7 @@
 #include <fcntl.h>
 
 //*************************************************************************
-// 														Constants
+// 				Constants
 //*************************************************************************
 #define MAX_LEN 2048
 #define MAX_BLOCKS 512
@@ -26,7 +26,7 @@
 #define YES "YES"
 
 //*************************************************************************
-// 												User-defined types
+// 			    User-defined types
 //*************************************************************************
 struct Block
 {
@@ -37,14 +37,14 @@ struct Block
 	char* aPipe;
 	char* aBackground;
 	int argc;
-  int pipeIn;
-  int pipeOut;
+	int pipeIn;
+	int pipeOut;
 };
 
 typedef struct Block Block;
 
 //*************************************************************************
-// 												Function Prototypes
+// 			    Function Prototypes
 //*************************************************************************
 void debugProcessing (char* pszCommand, size_t strSize);
 void normalProcessing (char* pszCommand, size_t strSsize);
