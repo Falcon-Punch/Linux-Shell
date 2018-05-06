@@ -1,12 +1,12 @@
 /*************************************************************************
  File name:  CS460_Shell.c
- Author:		 Joseph Schell
- Date:			 03/21/2018
- Class:      CS460 - Operating Systems
- Assignment: Create a UNIX Shell (Milestone 3)
- Purpose:		 Learn about Unix processes, interprocess communication,
- 	 	 	 	 	 	 and other shell functions like fork(), exec(), pipe() and
- 	 	 	 	 	 	 dup2().
+ Author:     Joseph Schell
+ Date:	     03/21/2018
+ Class:      Operating Systems
+ Assignment: Create a UNIX Shell
+ Purpose:    Learn about Unix processes, interprocess communication,
+ 	     and other shell functions like fork(), exec(), pipe() and
+ 	     dup2().
  **************************************************************************/
 #include "../include/CS460_Shell.h"
 
@@ -14,7 +14,7 @@
  Function:    main
  Description: Driver for the Shell module
  Parameters:  argc	- number of command line arguments
- 	 	 	 	 	 	  argv	- array of pointers to each argument
+ 	      argv	- array of pointers to each argument
  Returned:    EXIT Status
  *************************************************************************/
 int main (int argc, char** argv)
@@ -55,9 +55,9 @@ int main (int argc, char** argv)
 /**************************************************************************
  Function:    	debugProcessing
  Description: 	Shows user input that has been parsed and shows as
- 	 	 	 	 	 	 	 	organized information
+ 	 	organized information
  Parameters:  	pszCommand - command string input
- 	 	 	 	 	 	 	  strSize - size of input string
+ 	 	strSize - size of input string
  Returned:    	none
  *************************************************************************/
 void debugProcessing (char* pszCommand, size_t strSize)
@@ -133,9 +133,9 @@ void debugProcessing (char* pszCommand, size_t strSize)
 /**************************************************************************
  Function:    	normalProcessing
  Description: 	Shows user input that has been parsed and shows as organized
- 	 	 	 	 	 	 	  information
+ 	 	information
  Parameters:  	pszCommand - command string input
- 	 	 	 	 	 	 	  strSize - size of input string
+ 	 	strSize - size of input string
  Returned:    	none
  *************************************************************************/
 void normalProcessing (char* pszCommand, size_t strSize)
@@ -163,7 +163,7 @@ void normalProcessing (char* pszCommand, size_t strSize)
  Function:    	splitString
  Description: 	splits string into an array of tokens
  Parameters:  	pszCommand - the command string
- 	 	 	 	 	 	 	  pLength - length of the array
+ 	 	pLength - length of the array
  Returned:    	none
  *************************************************************************/
 char** splitString (char* pszCommand, int *pArrayLen)
@@ -191,8 +191,8 @@ char** splitString (char* pszCommand, int *pArrayLen)
  Function:    	commandToBlocks
  Description: 	turns an array of tokens to an array of blocks
  Parameters:  	hStringTokens - address to the array of string tokens
- 	 	 	 	 	 	 	 	pLength - length of the array of tokens
- 	 	 	 	 	 	 	  asBlocksArray - array of empty blocks
+ 	 	pLength - length of the array of tokens
+ 	 	asBlocksArray - array of empty blocks
  Returned:    	number of blocks created
  *************************************************************************/
 int commandToBlocks (char** hStringTokens, int arrayLen,
@@ -286,7 +286,7 @@ int commandToBlocks (char** hStringTokens, int arrayLen,
  Function:    	singleCommand
  Description: 	process one command
  Parameters:  	psBlock - pointer to a Block that holds the command
- Returned:			none
+ Returned:	none
  *************************************************************************/
 void singleCommand (Block* psBlock)
 {
@@ -369,8 +369,8 @@ void singleCommand (Block* psBlock)
  Function:    	multiCommand
  Description: 	process multiple commands
  Parameters:  	asBlocksArray - array of blocks
- 	 	 	 	 	 	 	  blockNum - number of blocks
- Returned:			none
+ 	 	blockNum - number of blocks
+ Returned:	none
  *************************************************************************/
 void multiCommand (Block asBlocksArray[], int blockNum)
 {
@@ -397,10 +397,10 @@ void multiCommand (Block asBlocksArray[], int blockNum)
  Function:    	execCommand
  Description: 	execute a command
  Parameters:  	psBlock - pointer to a Block that holds the command
- 	 	 	 	 	 	 	  index - index number of the block
- 	 	 	 	 	 	 	  blockNum - number of blocks
- 	 	 	 	 	 	 	  fd - array of all the file descriptors
- Returned:			none
+ 	 	index - index number of the block
+ 	 	blockNum - number of blocks
+ 	 	fd - array of all the file descriptors
+ Returned:	none
  *************************************************************************/
 void execCommand (Block* psBlock, int index, int blockNum, int fd[][2])
 {
@@ -530,7 +530,7 @@ void execCommand (Block* psBlock, int index, int blockNum, int fd[][2])
  Function:    	changeDirectory
  Description: 	implements a change directory command
  Parameters:  	psBlock - pointer to a Block that holds the command
- Returned:			none
+ Returned:	none
  *************************************************************************/
 void changeDirectory (Block* psBlock)
 {
