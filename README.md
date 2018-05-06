@@ -1,2 +1,2 @@
-# Linux-Shell
-Recreation of the Linux Shell
+# UNIX-Shell
+Recreation of a UNIX Shell
