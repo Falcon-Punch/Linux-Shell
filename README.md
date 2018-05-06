@@ -1,2 +1,2 @@
 # UNIX-Shell
-Recreation of a UNIX Shell
+Create a UNIX Shell
